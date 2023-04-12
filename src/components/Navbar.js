@@ -1,57 +1,60 @@
-import React from "react";
-import { FaBasketballBall } from "react-icons/fa";
+import React, { useState } from "react";
+import { IoMdFitness } from "react-icons/io";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <FaBasketballBall className="h-8 w-8 mr-2" />
-        <span className="font-semibold text-xl tracking-tight">Sports App</span>
-      </div>
-      <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-gray-200 border-gray-400 hover:text-white hover:border-white">
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <title>Menu</title>
-            <path
-              d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-              fillRule="evenodd"
-            />
-          </svg>
-        </button>
-      </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
+    <nav className="fixed top-0 left-0 w-full bg-gray-50 py-4 px-6 md:px-10 z-50">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center">
+          <IoMdFitness className="text-3xl text-gray-700 mr-2" />
+          <span className="text-gray-700 text-lg font-semibold">Fitness App</span>
+        </div>
+        <div className="flex md:hidden">
+          {isOpen ? (
+            <FaTimes className="text-gray-700 text-2xl" onClick={handleToggle} />
+          ) : (
+            <FaBars className="text-gray-700 text-2xl" onClick={handleToggle} />
+          )}
+        </div>
+        <div className="hidden md:flex md:items-center ">
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="text-gray-700 text-lg font-light border-offset-8 border-b-2  hover:border-orange-500 hover:text-gray-500 mr-10 transition-all duration-200"
           >
             Home
           </a>
           <a
             href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white mr-4"
+            className="text-gray-700 text-lg font-light border-offset-8 border-b-2  hover:border-orange-500  hover:text-gray-500 mr-10 transition-all duration-200"
           >
-            News
-          </a>
-          <a
-            href="#responsive-header"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white"
-          >
-            Contact
+            Exercises
           </a>
         </div>
-        <div>
-          <a
-            href="#"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"
-          >
-            Sign In
-          </a>
-        </div>
+      </div>
+      <div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } md:hidden mt-4`}
+      >
+        <a
+          href="#responsive-header"
+          className="block text-gray-700 text-lg font-light py-2 hover:text-gray-200"
+        >
+          Home
+        </a>
+        <a
+          href="#responsive-header"
+          className="block text-gray-700 text-lg font-light py-2 hover:text-gray-200"
+        >
+          Exercises
+        </a>
       </div>
     </nav>
   );
