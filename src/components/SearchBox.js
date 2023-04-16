@@ -33,7 +33,7 @@ function SearchBox({setexercises,bodyPart,setbodyPart}) {
         };
         bodyPartData();
     }, []);
-
+    console.log(bodyPart)
     return (
         <>
             <div className="flex justify-center flex-col">

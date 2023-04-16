@@ -5,6 +5,7 @@ import { Pagination } from '@mui/material'
 function Exercises({exercises,bodyPart,setexercises}) {
   const [currentPage, setcurrentPage] = useState(1)
   const exercisePerPage = 9;
+  console.log(exercises);
   const paginate = (e,value) => {
     setcurrentPage(value);
     window.scrollTo({top:1300,behavior:'smooth'})
