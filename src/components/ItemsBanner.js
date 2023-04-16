@@ -1,11 +1,12 @@
 import React from 'react'
+import BodyPart from './BodyPart'
 
-function ItemsBanner({data}) {
+function ItemsBanner({data,bodyParts,setbodyParts}) {
   return (
     <>
     <div className=' flex justify-center flex-wrap my-10'>
         {data.map((item) => (
-            <div className='p-4 w-[150px] m-5 justify-center space-x-3 rounded-md text-center bg-blue-100 text-blue-500 text-md border-blue-600 border-spacing-1 border-2 border-opacity-5' key={item.id || item}>{item}</div>
+          <BodyPart key={item.id} item={item} bodyParts={bodyParts} setbodyParts={setbodyParts}/>
         ))}
     </div>
     </>
