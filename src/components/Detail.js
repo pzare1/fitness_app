@@ -2,12 +2,13 @@ import React from "react";
 import { BiBody } from 'react-icons/bi'
 import { FiTarget } from 'react-icons/fi'
 import { GiMuscularTorso } from 'react-icons/gi'
+
 function Detail({ exerciseDetail }) {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
   return (
-    <div className="grid grid-cols-2 text-center align-middle items-center mt-20 p-10">
+    <div className="grid sm:grid-cols-2 grid-cols-1 text-center align-middle items-center mt-20 p-10">
       <div>
-        <img src={gifUrl} />
+        <img src={gifUrl} alt={name}/>
       </div>
       <div className=" flex justify-start flex-col">
         <h1 className="sm:text-xl text-md text-blue-500 font-extrabold text-left my-3">{name}</h1>

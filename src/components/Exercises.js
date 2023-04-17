@@ -14,11 +14,14 @@ function Exercises({exercises,bodyPart,setexercises}) {
   const indexOfFirstExercise = indexOfLastExercise-exercisePerPage;
   const currentExercise = exercises.slice(indexOfFirstExercise,indexOfLastExercise)
   return (
+    <>
     <div className='grid sm:grid-cols-3 grid-cols-2 items-center text-center m-auto'>
       {currentExercise.map((exercise,index) => (
         <div key={index}><ExerciseCard exercise={exercise}/></div>
       ))}
-      {
+    </div>
+    <div>
+    {
         exercises.length>9 && (
           <div className='flex justify-center'>
           <Pagination
@@ -32,6 +35,7 @@ function Exercises({exercises,bodyPart,setexercises}) {
         )
       }
     </div>
+    </>
   )
 }
 

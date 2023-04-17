@@ -10,3 +10,8 @@ export const fetchData = async(url,options) => {
     const data = await response.json();
     return data;
 }
+
+export const capitalTarget = (exercise,nameOption) => {
+  const capitalTarget = exercise.nameOption.charAt(0).toUpperCase() + exercise.nameOption.slice(1);
+  return capitalTarget;
+}
