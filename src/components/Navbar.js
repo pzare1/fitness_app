@@ -27,13 +27,13 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex md:items-center  ml-20">
           <Link
-            to="#responsive-header"
+            to='/'
             className="text-gray-700 text-lg font-light border-offset-8 border-b-2 border-gray-100   hover:border-blue-500 hover:text-gray-500 mr-10 transition-all duration-200"
           >
             Home
           </Link>
           <Link
-            to="#responsive-header"
+            to="/"
             className="text-gray-700 text-lg font-light border-offset-8 border-b-2 border-gray-100   hover:border-blue-500  hover:text-gray-500 mr-10 transition-all duration-200"
           >
             Exercises
